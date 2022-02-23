@@ -1,0 +1,46 @@
+$display: flex;
+$alignment: center;
+$spacecontent: space-between;
+$buttonbgcolor: #000000;
+$buttoncolor: #ffffff;
+$margin: 70px 0px 70px 80px;
+
+
+.main-frame
+{
+    display: $display;
+    align-items: center;
+    justify-content: $spacecontent;
+    padding: $margin;
+    .part1
+    {
+        width: 35%;
+        
+        p
+        {
+            font-weight: bold;
+            font-size: 48px;
+            line-height: 130%;
+            /* or 62px */
+            letter-spacing: -0.04em;
+        }
+        button
+        {
+            background-color: $buttonbgcolor;
+            border: none;
+            color: $buttoncolor;
+            margin: 30px 0px;
+            padding: 20px 60px;
+            border-radius: 8px;
+            box-shadow: 0px 16px 40px 0px #C0560A66;
+        }
+    }
+    .part2
+    {
+        width: 50%;
+        img
+        {
+            width: 100%;
+        }
+    }
+}

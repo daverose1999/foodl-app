@@ -1,0 +1,44 @@
+/*Nav*/
+$navpadding: 20px 80px;
+$navdisplay: flex;
+$navalignment: center;
+$navspace: space-between;
+$none: none;
+
+/*link*/
+$activeroutercolor: #42b983;
+$routercolor: #2c3e50;
+$routerweight: normal;
+$fontsize: 18px;
+$activerouterweight: bold;
+
+$transition: font-weight 4s 1s;
+
+$linkspace: 0px 0px 0px 70px;
+
+
+.navbar
+{
+    position: relative;
+    z-index: 1;
+  padding: $navpadding;
+  display: $navdisplay;
+  align-items: $navalignment;
+  justify-content: $navspace;
+  font-size: $fontsize;
+  transition: $transition;
+
+nav {
+  a {
+    font-weight: $routerweight;
+    color: $routercolor;
+    margin: $linkspace;
+    text-decoration: $none;
+
+    &:hover,  &.router-link-exact-active  {
+      
+      font-weight: $activerouterweight;
+    }
+  }
+}
+}
