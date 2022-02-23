@@ -7,7 +7,10 @@
         <button>Search Now</button>
         </article>
       
-      <figure class="part2"><img src="../../assets/Group 1.svg"></figure>
+      <figure class="part2">
+        <img class="rotating-plate" src="../../assets/image 1.svg">
+        <img class="line" src="../../assets/Rectangle 10.svg"/>
+        </figure>
     </section>
   </main>
 </template>
