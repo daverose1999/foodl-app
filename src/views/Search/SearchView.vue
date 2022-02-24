@@ -1,21 +1,23 @@
 <template>
   <main class="search">
+    
     <NavBar/>
     <section class="section-1">
       <header>
         <h1>What ingredients do you have?</h1>
       </header>
-       <div class="input-box">
+       <form class="input-box">
          <input
           class="input-field"
           placeholder="Search your favorite food..."
+          v-model="searchQuery"
         />
         <i class="fa fa-search"></i>
-        </div>
-        <figure> <img src="../../assets/Mask Group.svg"></figure>
+        </form>
+
     </section>
     <section class="section-2">
-      <Cards/>
+      <Cards :searchQuery="searchQuery" />
     </section>
   </main>
 </template>

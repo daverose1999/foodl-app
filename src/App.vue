@@ -10,7 +10,10 @@ $background: #FF9F59;
 $fontcolor: #000000;
 $backgroundimage: url('./assets/noise\ 2.svg');
 
-
+template
+{
+  height: 100%
+}
 #app {
   font-family: $fontfamily;
   -webkit-font-smoothing: antialiased;

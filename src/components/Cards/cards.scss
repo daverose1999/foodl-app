@@ -3,39 +3,126 @@
     height: fit-content;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
 }
+.blank-page{
+  text-align: center;
+
+  .round-figure{
+    margin: 0 auto;
+    background-color: #FF9F59;
+    background-image: url(../../assets/Mask\ Group.svg);
+    background-position: center;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+
+    img
+    {
+      object-fit: contain;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+    }
+  }
+  
+  .heading
+  {
+    font-size: 48px;
+    font-weight: 900;
+    margin: 10px;
+  }
+  .sub-text{
+    margin: 10px;
+    font-size: 24px;
+  }
+}
+
+
+
+.skeleton
+{
+  position: relative;
+  width: 50%;
+  height: 100px;
+  background: #D3D3D3;
+    overflow: hidden;
+}
+.skeleton::before
+{
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 100px;
+  width: 100px;
+  opacity: 0.5;
+  height: 600px;
+  background:#ffffff;
+  animation-duration: 1s;
+  animation-name: slideout;
+  animation-iteration-count: infinite;
+  filter: blur(16px);
+}
+  @keyframes slideout {
+ 0%
+    { 
+    left: 0px;
+/*     transform: translate(0, 0);     */
+  }
+  100% {
+    left: 100%;
+/*     transform: translate(, 0); */
+  }
+}
+
 .card
 {
-    text-align: center;
-    background-color: #FFFFFF;
-    width: 260px;
-    height: 245px;
-    box-shadow: 0px 24px 64px -16px rgba(0, 0, 0, 0.1);
-    border-radius: 16px;
-    margin: 25px 0px;
-    overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
+    position: relative;
+    width: 285px;
+    height: 270px;
+    margin: 30px 5px;
 
-    p
-    {
-        height: 100px;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 18px;
-    
+    header{
+        position: relative;
+        width: 100%;
+        height: 100%;
+        background-color: #FFFFFF;
+        box-shadow: 0px 24px 64px -16px rgba(0, 0, 0, 0.1);
+        border-radius: 16px;
+
+        p
+        {
+            position: absolute;
+            bottom: 0px;
+            width: 100%;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 18px;
+            padding: 0px 20px 25px;
+        
+        }
     }
+   
 
     figure{
+        position: absolute;
+        top: -20px;
+        text-align: center;
+        z-index: 1;
         width: 100%;
+        
+
 
         img{
             width: 90%;
+            height: 230px;
             box-shadow: 0px 32px 48px -16px rgba(0, 0, 0, 0.25);
             border-radius: 8px;
-            object-fit: contain;
+            object-fit: cover;
             object-position: center;
+
         }
     }
 }

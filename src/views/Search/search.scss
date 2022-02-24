@@ -1,3 +1,8 @@
+.search{
+    background-image: url(../../assets/Mask\ Group.svg);
+    background-attachment: fixed;
+}
+
 .section-1
 {
     padding: 80px;
@@ -30,36 +35,22 @@
             font-size: 24px;
             line-height: 100%;
             outline: none;
-            border: none;
+            border: 6px solid #FBFBFB;;
             border-radius: 16px;
+
         }
 
         .fa-search
         {
             position: absolute;
             font-size: 18px;
-            top: 20px;
+            top: 50%;
+            -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
             left: 20px;
         }
     }
     
-
-    figure 
-    {
-        position: absolute;
-        top: 0;
-        right: 0;
-        z-index: 0;
-        height: 100%;
-
-
-        img
-        {
-            object-fit:contain;
-            object-position: 50px ;
-            height: 70%;
-        }
-    }
     
 }
 
@@ -67,5 +58,5 @@
 .section-2
 {
     background-color: #F8F8F8;
-    padding: 70px 80px;
+    padding: 100px 120px;
 }

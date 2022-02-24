@@ -8,5 +8,12 @@ export default {
   components: {
     NavBar,
     Cards
+},
+data()
+{
+  return{
+    searchQuery: '',
+  }
 }
+
 }

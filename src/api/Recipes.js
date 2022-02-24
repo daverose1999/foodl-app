@@ -1,8 +1,9 @@
-import http from "./Http-command";  
+import http from "./Http-command"; 
+
 class Recipes {  
      
-    getAll() {  
-        return http.get("/api/json/v1/1/filter.php?i=chicken_breast");  
+    getAll(searchQuery) {  
+        return http.get(`/api/json/v1/1/filter.php?i=${searchQuery}`);  
       }  
         
 }  

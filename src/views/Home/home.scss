@@ -40,11 +40,12 @@ $margin: 100px 0px 100px 120px;
         width: 60%;
         display: flex;
         position: relative;
+
         .rotating-plate
         {
             z-index: 1;
            width: 85%;
-           animation: rotation 20ss infinite linear;
+           animation: rotation 20s infinite linear;
         }
         @keyframes rotation {
             from {
