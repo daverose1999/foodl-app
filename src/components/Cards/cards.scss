@@ -38,41 +38,11 @@
 }
 
 
-
-.skeleton
-{
-  position: relative;
-  width: 50%;
-  height: 100px;
-  background: #D3D3D3;
-    overflow: hidden;
-}
-.skeleton::before
-{
-  content: "";
-  position: absolute;
-  top: 0px;
-  left: 100px;
-  width: 100px;
-  opacity: 0.5;
-  height: 600px;
-  background:#ffffff;
-  animation-duration: 1s;
-  animation-name: slideout;
-  animation-iteration-count: infinite;
-  filter: blur(16px);
-}
-  @keyframes slideout {
- 0%
-    { 
-    left: 0px;
-/*     transform: translate(0, 0);     */
-  }
-  100% {
-    left: 100%;
-/*     transform: translate(, 0); */
-  }
-}
+ .skeleton
+    {
+      display: flex;
+      justify-content: space-between;
+    }
 
 .card
 {

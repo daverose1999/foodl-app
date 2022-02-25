@@ -1,39 +1,37 @@
 // @ is an alias to /src
 import Recipes from "../../api/Recipes";
+import SkeletonLoader from "../SkeletonLoader/SkeletonLoader.vue";
 
 export default {
   name: "Cards",
+  components: { SkeletonLoader },
   props: {
     searchQuery: String,
   },
   data() {
     return {
       recipes: [],
+      loading: true,
     };
   },
-  // computed: {
-  //   resultQuery() {
-  //     if (this.searchQuery) {
-  //       return this.recipes.meals.filter((item) => {
-  //         return this.searchQuery
-  //           .toLowerCase()
-  //           .split(" ")
-  //           .every((v) =>
-  //           item.strMeal.toLowerCase().includes(v)
-  //           );
-  //       })
-  //     }
-  //     else {
-  //       return this.recipes.meals;
-  //     }
-  //   }
-  // },
-  watch: {
-    searchQuery() {
-      this.retrieveRecipes()
+  mounted() {
+    if (this.searchQuery) {
+      setTimeout(() => {
+        this.setLoadingState(false);
+      }, 6000);
     }
   },
+
+  watch: {
+    searchQuery() {
+      this.retrieveRecipes();
+    },
+  },
   methods: {
+    setLoadingState(value) {
+      this.loading = value;
+    },
+
     retrieveRecipes() {
       if (this.searchQuery) {
         Recipes.getAll(this.searchQuery)
@@ -59,5 +57,4 @@ export default {
     //   console.log(res)
     // })
   },
-
 };

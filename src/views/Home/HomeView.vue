@@ -4,7 +4,7 @@
     <section class="main-frame">
       <article class="part1">
         <p>Find recipes for the ingredients you have on hand</p>
-        <button>Search Now</button>
+        <router-link  to="/search"><button class="button">Search Now</button></router-link>
         </article>
       
       <figure class="part2">

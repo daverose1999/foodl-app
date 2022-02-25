@@ -2,12 +2,21 @@
   <section>
     <article class="blank-page" v-if="!searchQuery">
       <figure class="round-figure">
-        <img src="../../assets/media_result_20220224_7f175682-0143-4a1a-bb6d-811a0f0b1478.png" />
+        <img
+          src="../../assets/media_result_20220224_7f175682-0143-4a1a-bb6d-811a0f0b1478.png"
+        />
       </figure>
       <p class="heading">At your service!</p>
       <p class="sub-text">
         Recipes to all your favorite foods at your fingertips, literally
       </p>
+    </article>
+    <article class="blank-page" v-else-if="!loading">
+      <figure class="round-figure">
+        <img src="../../assets/food1.png" />
+      </figure>
+      <p class="heading">Oops!</p>
+      <p class="sub-text">No data found</p>
     </article>
 
     <wrapper class="cards" v-else-if="recipes">
@@ -21,10 +30,11 @@
       </article>
     </wrapper>
 
-    <article class="blank-page" v-else>
-      <figure class="round-figure"><img src="../../assets/food1.png" /></figure>
-      <p class="heading">Oops!</p>
-      <p class="sub-text">No data found</p>
+    <article class="skeleton" v-else>
+      <skeleton-loader :loading="loading"></skeleton-loader>
+      <skeleton-loader :loading="loading"></skeleton-loader>
+      <skeleton-loader :loading="loading"></skeleton-loader>
+      <skeleton-loader :loading="loading"></skeleton-loader>
     </article>
   </section>
 </template>
