@@ -1,18 +1,17 @@
 <template>
   <div id="app">
-    <router-view/>
+    <router-view />
   </div>
 </template>
 
 <style lang="scss">
 $fontfamily: IBM Plex Sans;
-$background: #FF9F59;
+$background: #ff9f59;
 $fontcolor: #000000;
-$backgroundimage: url('./assets/noise\ 2.svg');
+$backgroundimage: url("./assets/noise\ 2.svg");
 
-template
-{
-  height: 100%
+template {
+  height: 100%;
 }
 #app {
   font-family: $fontfamily;
@@ -22,9 +21,8 @@ template
   background: $background;
   background-image: $backgroundimage;
 }
-*{
+* {
   margin: 0;
   box-sizing: border-box;
-
 }
 </style>

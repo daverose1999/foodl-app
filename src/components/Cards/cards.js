@@ -8,39 +8,61 @@ export default {
   props: {
     searchQuery: String,
   },
+
   data() {
     return {
       recipes: [],
       loading: true,
     };
   },
-  mounted() {
-    if (this.searchQuery) {
-      setTimeout(() => {
-        this.setLoadingState(false);
-      }, 6000);
-    }
-  },
+
+  mounted() {},
 
   watch: {
     searchQuery() {
       this.retrieveRecipes();
+      this.loadSkeleton();
+    },
+
+    idMeal() {
+      this.openCard();
     },
   },
   methods: {
+    loadSkeleton() {
+      this.setLoadingState(true);
+      setTimeout(() => {
+        this.setLoadingState(false);
+      }, 5000);
+    },
+
     setLoadingState(value) {
       this.loading = value;
+      console.log(this.loading);
+    },
+
+    openCard(value) {
+      this.$router.push(`/search/${value}`);
+      // console.log(value);
+      // Recipes.getItem(value)
+      //   .then((response) => {
+      //     console.log(value);
+      //     console.log(response.data);
+      // console.log(this.searchQuery);
+      //this.recipes = response.data.meals;
+      //console.log(response.data);
+      // })
+      // .catch((e) => {
+      //   console.log(e);
+      // });
     },
 
     retrieveRecipes() {
       if (this.searchQuery) {
         Recipes.getAll(this.searchQuery)
           .then((response) => {
-            // console.log(response.data);
-            // console.log(this.searchQuery);
+            this.$router.push(`/search?recipe=${this.searchQuery}`);
             this.recipes = response.data.meals;
-            // console.log(response.data);
-            // console.log(this.recipes);
           })
           .catch((e) => {
             console.log(e);
@@ -53,8 +75,10 @@ export default {
 
   created() {
     this.retrieveRecipes();
-    // Recipes.getAll('beef').then(res => {
-    //   console.log(res)
-    // })
+    // this.openCard();
+    // this.openCard();
+    // Recipes.getItem("53016").then((res) => {
+    //   console.log(res);
+    // });
   },
 };

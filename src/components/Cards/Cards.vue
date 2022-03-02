@@ -11,16 +11,21 @@
         Recipes to all your favorite foods at your fingertips, literally
       </p>
     </article>
-    <article class="blank-page" v-else-if="!loading">
+    <article class="blank-page" v-else-if="!loading && !recipes">
       <figure class="round-figure">
-        <img src="../../assets/food1.png" />
+        <img style="transform: scaleX(-1)" src="../../assets/food1.png" />
       </figure>
       <p class="heading">Oops!</p>
       <p class="sub-text">No data found</p>
     </article>
 
-    <wrapper class="cards" v-else-if="recipes">
-      <article class="card" v-for="item in recipes" :key="item.Id">
+    <section class="cards" v-else-if="recipes">
+      <article
+        v-on:click="openCard(`${item.idMeal}`)"
+        class="card"
+        v-for="item in recipes"
+        :key="item.Id"
+      >
         <figure class="image">
           <img :src="item.strMealThumb" />
         </figure>
@@ -28,9 +33,9 @@
           <p>{{ item.strMeal }}</p>
         </header>
       </article>
-    </wrapper>
+    </section>
 
-    <article class="skeleton" v-else>
+    <article class="skeleton" v-show="loading" v-else>
       <skeleton-loader :loading="loading"></skeleton-loader>
       <skeleton-loader :loading="loading"></skeleton-loader>
       <skeleton-loader :loading="loading"></skeleton-loader>
