@@ -32,13 +32,16 @@ export default {
     },
 
     splitedList() {
-      if (!this.instruction.includes("\r\n")) {
-        console.log(this.instruction);
-        this.list = this.instruction;
-        // this.list = this.instruction.split(".");
+      console.log(this.instruction);
+
+      this.list = this.instruction;
+      this.list = this.list.toString();
+      if (!this.list.includes("\r\n")) {
+        this.list = this.list.split(".");
+        console.log(this.list);
       } else {
-        // console.log(this.instruction.split("\r\n"));
-        // this.list = this.instruction.split("\r\n");
+        console.log(this.list.split("\r\n"));
+        this.list = this.list.split("\r\n");
       }
       return this.list;
     },

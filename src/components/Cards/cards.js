@@ -21,7 +21,7 @@ export default {
   watch: {
     searchQuery() {
       this.retrieveRecipes();
-      this.loadSkeleton();
+      // this.loadSkeleton();
     },
 
     idMeal() {
@@ -29,12 +29,7 @@ export default {
     },
   },
   methods: {
-    loadSkeleton() {
-      this.setLoadingState(true);
-      setTimeout(() => {
-        this.setLoadingState(false);
-      }, 5000);
-    },
+    // loadSkeleton() {},
 
     setLoadingState(value) {
       this.loading = value;
@@ -59,6 +54,7 @@ export default {
 
     retrieveRecipes() {
       if (this.searchQuery) {
+        this.setLoadingState(true);
         Recipes.getAll(this.searchQuery)
           .then((response) => {
             this.$router.push(`/search?recipe=${this.searchQuery}`);
@@ -66,6 +62,11 @@ export default {
           })
           .catch((e) => {
             console.log(e);
+          })
+          .finally(() => {
+            setTimeout(() => {
+              this.setLoadingState(false);
+            }, 5000);
           });
       } else {
         return this.recipes;
